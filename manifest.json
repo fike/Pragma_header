@@ -1,0 +1,17 @@
+{
+  "name": "Pragma Header",
+  "version": "0.1",
+  "description": "Pragma Header",
+  "browser_action": {
+	  "default_icon": "ligth.png",
+	  "default_title": "Pragma Header"
+  },
+  "permissions": [
+	  "webRequest",
+  	  "webRequestBlocking",
+	  "http://*/*",
+	  "https://*/*"],
+  "options_page": "options.html",
+  "background_page": "background.html"
+}
+

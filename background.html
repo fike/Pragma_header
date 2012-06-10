@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+var Pragma1 = localStorage["dataPragma1"];
+var Pragma2 = localStorage["dataPragma2"];
+var All_Pragmas = Pragma1 + " " + Pragma2;
+/* That is workaround, without it the extension is crash.*/
+if(Pragma1.length == 0){
+	var Pragma_t = "a"
+}
+
+
+	chrome.webRequest.onBeforeSendHeaders.addListener(   
+	function(info) { newheader = [{name:'Pragma', value: All_Pragmas}]; 		console.log("URL: " + info.url);    
+		info.requestHeaders.push.apply(info.requestHeaders,newheader);    
+		for(var i in info.requestHeaders) {         
+			for (var key in info.requestHeaders[i]){            
+				console.log("header "+i+" ["+key+"] "+info.requestHeaders[i][key]);         
+		}   }
+		return {requestHeaders: info.requestHeaders};   
+	},   
+	{urls: ["<all_urls>"]},   
+	["blocking", "requestHeaders"]);
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add header pragma</title>
+<script type="text/javascript">
+function sPragma(){
+
+    var Pragma1 = document.forms['PragmaForm'].PragmaValue1.value;
+    var Pragma2 = document.forms['PragmaForm'].PragmaValue2.value;
+    
+    var itemStorage1 = localStorage.setItem('dataPragma1', Pragma1);
+    var itemStorage2 = localStorage.setItem('dataPragma2', Pragma2);
+
+    var valueItemStorage1 = localStorage.getItem('dataPragma1');
+    var valueItemStorage2 = localStorage.getItem('dataPragma2');
+    
+    if (!Pragma1)
+        alert('Entry a value.');
+    else {
+
+    mensagem = 'Added ' +valueItemStorage1+'\n';
+    mensagem += 'and' +valuerItemStorage2+'\n';
+
+
+   alert(mensagem);
+
+    }
+
+}
+
+
+
+    function cPragma() {
+
+    localStorage.removeItem('dataPragma1');
+    localStorage.removeItem('dataPragma2');
+    alert('All values deleted');
+    }
+			
+	
+   function restoreOptions(){
+   var valueItemStorage1 = localStorage.getItem('dataPragma1');
+   var valueItemStorage2 = localStorage.getItem('dataPragma2');
+   document.PragmaForm.PragmaValue1.value = valorItemStorage1;
+   document.PragmaForm.PragmaValue2.value = valorItemStorage2;
+}
+
+   
+
+</script>
+
+
+</head>
+ 
+<body onload="restoreOptions()">
+<section> 
+
+    <form name="PragmaForm" action="#">
+
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue1"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue2"></p>
+
+    </form>
+
+    <p><input type="button" onclick="sPragma()" value="Save"></p>
+    <p><input type="button" onclick="cPragma()" value="Delete"></p>
+
+   </section>
+
+
+</body>
+</html>
