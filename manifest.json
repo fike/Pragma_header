@@ -3,6 +3,7 @@
   "version": "0.1",
   "description": "Pragma Header",
   "browser_action": {
+	  "popup": "popup.html",
 	  "default_icon": "ligth.png",
 	  "default_title": "Pragma Header"
   },
@@ -11,6 +12,11 @@
   	  "webRequestBlocking",
 	  "http://*/*",
 	  "https://*/*"],
+  "icons": {
+	  "128": "light_128.png",
+	  "64": "light_64.png",
+	  "16": "ligth.png"
+  },
   "options_page": "options.html",
   "background_page": "background.html"
 }

@@ -40,18 +40,27 @@ function sPragma(){
     var valueItemStorage9 = localStorage.getItem('dataPragma9');
     var valueItemStorage10 = localStorage.getItem('dataPragma10');
     var valueItemStorage11 = localStorage.getItem('dataPragma11');
+
+	if (!Pragma1)
+        alert('Entry a value!');
+	else
+	msgbox = 'Added is: \n'; 
+	msgbox = ' \n'; 
+	msgbox += ' ' + valueItemStorage1 +'\n';
+	msgbox += ' ' + valueItemStorage2 +'\n';
+	msgbox += ' ' + valueItemStorage3 +'\n';
+	msgbox += ' ' + valueItemStorage4 +'\n';
+	msgbox += ' ' + valueItemStorage5 +'\n';
+	msgbox += ' ' + valueItemStorage6 +'\n';
+	msgbox += ' ' + valueItemStorage7 +'\n';
+	msgbox += ' ' + valueItemStorage8 +'\n';
+	msgbox += ' ' + valueItemStorage9 +'\n';
+	msgbox += ' ' + valueItemStorage10 +'\n';
+	msgbox += ' ' + valueItemStorage11 +'\n';
+
+   	alert(msgbox);
+
     
-    if (!Pragma1)
-        alert('Entry a value.');
-    else {
-
-    mensagem = 'Added ' +valueItemStorage1+'\n';
-    mensagem += 'and' +valuerItemStorage2+'\n';
-
-
-   alert(mensagem);
-
-    }
 
 }
 
