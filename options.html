@@ -16,7 +16,7 @@ function sPragma(){
     var Pragma9 = document.forms['PragmaForm'].PragmaValue9.value;
     var Pragma10 = document.forms['PragmaForm'].PragmaValue10.value;
     var Pragma11 = document.forms['PragmaForm'].PragmaValue11.value;
-    
+
     var itemStorage1 = localStorage.setItem('dataPragma1', Pragma1);
     var itemStorage2 = localStorage.setItem('dataPragma2', Pragma2);
     var itemStorage3 = localStorage.setItem('dataPragma3', Pragma3);
@@ -41,11 +41,11 @@ function sPragma(){
     var valueItemStorage10 = localStorage.getItem('dataPragma10');
     var valueItemStorage11 = localStorage.getItem('dataPragma11');
 
-	if (!Pragma1)
+    if (!Pragma1){
         alert('Entry a value!');
-	else
-	msgbox = 'Added is: \n'; 
-	msgbox = ' \n'; 
+    }else{
+        msgbox = 'Added is: \n';
+	msgbox = ' \n';
 	msgbox += ' ' + valueItemStorage1 +'\n';
 	msgbox += ' ' + valueItemStorage2 +'\n';
 	msgbox += ' ' + valueItemStorage3 +'\n';
@@ -59,8 +59,8 @@ function sPragma(){
 	msgbox += ' ' + valueItemStorage11 +'\n';
 
    	alert(msgbox);
+    }
 
-    
 
 }
 
@@ -81,8 +81,8 @@ function sPragma(){
     localStorage.removeItem('dataPragma11');
     alert('All values deleted');
     }
-			
-	
+
+
    function restoreOptions(){
    var valueItemStorage1 = localStorage.getItem('dataPragma1');
    var valueItemStorage2 = localStorage.getItem('dataPragma2');
@@ -108,17 +108,17 @@ function sPragma(){
    document.PragmaForm.PragmaValue11.value = valueItemStorage11;
 }
 
-   
+
 
 </script>
 
 
 </head>
- 
-<body onload="restoreOptions()">
-<section> 
 
-    <form name="PragmaForm" action="#">
+<body onload="restoreOptions()">
+<section>
+
+    <form name="PragmaForm" action="#" id="PragmaForm">
 
     <p><label>Add a "Pragma":</label><br> <input name="PragmaValue1"></p>
     <p><label>Add a "Pragma":</label><br> <input name="PragmaValue2"></p>
@@ -131,7 +131,7 @@ function sPragma(){
     <p><label>Add a "Pragma":</label><br> <input name="PragmaValue9"></p>
     <p><label>Add a "Pragma":</label><br> <input name="PragmaValue10"></p>
     <p><label>Add a "Pragma":</label><br> <input name="PragmaValue11"></p>
- 
+
 	</form>
 
     <p><input type="button" onclick="sPragma()" value="Save"></p>
