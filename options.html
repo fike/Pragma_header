@@ -4,133 +4,57 @@
 <title>Add header pragma</title>
 <script type="text/javascript">
 function sPragma(){
+    var field, num;
+    var msgbox = 'Pragmas added:\n\n';
+    for(var i=0;i<pragmafields.length;i++){
+        field = pragmafields[i];
+        num = i+1;
+        localStorage.setItem('dataPragma'+num, field.value);
+        msgbox += ' '+field.value+'\n';
+    }
 
-    var Pragma1 = document.forms['PragmaForm'].PragmaValue1.value;
-    var Pragma2 = document.forms['PragmaForm'].PragmaValue2.value;
-    var Pragma3 = document.forms['PragmaForm'].PragmaValue3.value;
-    var Pragma4 = document.forms['PragmaForm'].PragmaValue4.value;
-    var Pragma5 = document.forms['PragmaForm'].PragmaValue5.value;
-    var Pragma6 = document.forms['PragmaForm'].PragmaValue6.value;
-    var Pragma7 = document.forms['PragmaForm'].PragmaValue7.value;
-    var Pragma8 = document.forms['PragmaForm'].PragmaValue8.value;
-    var Pragma9 = document.forms['PragmaForm'].PragmaValue9.value;
-    var Pragma10 = document.forms['PragmaForm'].PragmaValue10.value;
-    var Pragma11 = document.forms['PragmaForm'].PragmaValue11.value;
-
-    var itemStorage1 = localStorage.setItem('dataPragma1', Pragma1);
-    var itemStorage2 = localStorage.setItem('dataPragma2', Pragma2);
-    var itemStorage3 = localStorage.setItem('dataPragma3', Pragma3);
-    var itemStorage4 = localStorage.setItem('dataPragma4', Pragma4);
-    var itemStorage5 = localStorage.setItem('dataPragma5', Pragma5);
-    var itemStorage6 = localStorage.setItem('dataPragma6', Pragma6);
-    var itemStorage7 = localStorage.setItem('dataPragma7', Pragma7);
-    var itemStorage8 = localStorage.setItem('dataPragma8', Pragma8);
-    var itemStorage9 = localStorage.setItem('dataPragma9', Pragma9);
-    var itemStorage10 = localStorage.setItem('dataPragma10', Pragma10);
-    var itemStorage11 = localStorage.setItem('dataPragma11', Pragma11);
-
-    var valueItemStorage1 = localStorage.getItem('dataPragma1');
-    var valueItemStorage2 = localStorage.getItem('dataPragma2');
-    var valueItemStorage3 = localStorage.getItem('dataPragma3');
-    var valueItemStorage4 = localStorage.getItem('dataPragma4');
-    var valueItemStorage5 = localStorage.getItem('dataPragma5');
-    var valueItemStorage6 = localStorage.getItem('dataPragma6');
-    var valueItemStorage7 = localStorage.getItem('dataPragma7');
-    var valueItemStorage8 = localStorage.getItem('dataPragma8');
-    var valueItemStorage9 = localStorage.getItem('dataPragma9');
-    var valueItemStorage10 = localStorage.getItem('dataPragma10');
-    var valueItemStorage11 = localStorage.getItem('dataPragma11');
-
-    if (!Pragma1){
+    if (!localStorage.getItem('dataPragma1')){
         alert('Entry a value!');
     }else{
-        msgbox = 'Added is: \n';
-	msgbox = ' \n';
-	msgbox += ' ' + valueItemStorage1 +'\n';
-	msgbox += ' ' + valueItemStorage2 +'\n';
-	msgbox += ' ' + valueItemStorage3 +'\n';
-	msgbox += ' ' + valueItemStorage4 +'\n';
-	msgbox += ' ' + valueItemStorage5 +'\n';
-	msgbox += ' ' + valueItemStorage6 +'\n';
-	msgbox += ' ' + valueItemStorage7 +'\n';
-	msgbox += ' ' + valueItemStorage8 +'\n';
-	msgbox += ' ' + valueItemStorage9 +'\n';
-	msgbox += ' ' + valueItemStorage10 +'\n';
-	msgbox += ' ' + valueItemStorage11 +'\n';
-
    	alert(msgbox);
     }
-
-
 }
 
 
 
-    function cPragma() {
-
-    localStorage.removeItem('dataPragma1');
-    localStorage.removeItem('dataPragma2');
-    localStorage.removeItem('dataPragma3');
-    localStorage.removeItem('dataPragma4');
-    localStorage.removeItem('dataPragma5');
-    localStorage.removeItem('dataPragma6');
-    localStorage.removeItem('dataPragma7');
-    localStorage.removeItem('dataPragma8');
-    localStorage.removeItem('dataPragma9');
-    localStorage.removeItem('dataPragma10');
-    localStorage.removeItem('dataPragma11');
-    alert('All values deleted');
+function cPragma() {
+    for(var i in pragmafields.length){
+        localStorage.removeItem('dataPragma'+(i+1));
     }
-
-
-   function restoreOptions(){
-   var valueItemStorage1 = localStorage.getItem('dataPragma1');
-   var valueItemStorage2 = localStorage.getItem('dataPragma2');
-   var valueItemStorage3 = localStorage.getItem('dataPragma3');
-   var valueItemStorage4 = localStorage.getItem('dataPragma4');
-   var valueItemStorage5 = localStorage.getItem('dataPragma5');
-   var valueItemStorage6 = localStorage.getItem('dataPragma6');
-   var valueItemStorage7 = localStorage.getItem('dataPragma7');
-   var valueItemStorage8 = localStorage.getItem('dataPragma8');
-   var valueItemStorage9 = localStorage.getItem('dataPragma9');
-   var valueItemStorage10 = localStorage.getItem('dataPragma10');
-   var valueItemStorage11 = localStorage.getItem('dataPragma11');
-   document.PragmaForm.PragmaValue1.value = valueItemStorage1;
-   document.PragmaForm.PragmaValue2.value = valueItemStorage2;
-   document.PragmaForm.PragmaValue3.value = valueItemStorage3;
-   document.PragmaForm.PragmaValue4.value = valueItemStorage4;
-   document.PragmaForm.PragmaValue5.value = valueItemStorage5;
-   document.PragmaForm.PragmaValue6.value = valueItemStorage6;
-   document.PragmaForm.PragmaValue7.value = valueItemStorage7;
-   document.PragmaForm.PragmaValue8.value = valueItemStorage8;
-   document.PragmaForm.PragmaValue9.value = valueItemStorage9;
-   document.PragmaForm.PragmaValue10.value = valueItemStorage10;
-   document.PragmaForm.PragmaValue11.value = valueItemStorage11;
+    alert('All values deleted');
 }
 
 
-
+function restoreOptions(){
+    window.pragmaform = document.getElementById('PragmaForm');
+    window.pragmafields = pragmaform.getElementsByClassName('pragma');
+    for(var i=0;i<pragmafields.length;i++){
+        pragmafields[i].value = localStorage.getItem('dataPragma'+(i+1));
+    }
+}
 </script>
-
-
 </head>
-
 <body onload="restoreOptions()">
 <section>
 
     <form name="PragmaForm" action="#" id="PragmaForm">
 
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue1"></p>
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue2"></p>
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue3"></p>
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue4"></p>
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue5"></p>
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue6"></p>
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue7"></p>
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue8"></p>
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue9"></p>
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue10"></p>
-    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue11"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue1" class="pragma"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue2" class="pragma"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue3" class="pragma"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue4" class="pragma"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue5" class="pragma"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue6" class="pragma"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue7" class="pragma"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue8" class="pragma"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue9" class="pragma"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue10" class="pragma"></p>
+    <p><label>Add a "Pragma":</label><br> <input name="PragmaValue11" class="pragma"></p>
 
 	</form>
 
