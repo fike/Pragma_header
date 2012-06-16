@@ -22,11 +22,16 @@ function sPragma(){
 
 
 
-function cPragma() {
-    for(var i in pragmafields.length){
-        localStorage.removeItem('dataPragma'+(i+1));
-    }
-    alert('All values deleted');
+function cPragma(){
+/*	for(var i in pragmafields.length){
+		localStorage.removeItem("dataPragma"+(i+1));
+}
+ */
+	for(var i=0;i<pragmafields.length;i++){
+		num = i+1;
+		localStorage.removeItem('dataPragma'+num);
+	}
+	alert('All values deleted');
 }
 
 
