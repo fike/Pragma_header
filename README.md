@@ -6,14 +6,16 @@ Pragma Header is simple extension to added pragma headers in requests http.
 Installation
 ------------
 
-To install, use extension developer mode Chrome/Chromium.
+To install, go to Chrome Stora or use extension developer mode Chrome/Chromium.
 
 TODO
 ----
 
-* Split javascript code of the html code.
-* Update online header.
+* Split javascript code of the htm code.
+* Update header without restart chrome/chromium.
 * Fix bug when new header set zero.
+* Create a beatiful designer. My designer skill is terrible, so I accept voluntaree. :D
+
 
 Copyright and License
 ---------------------
@@ -26,7 +28,7 @@ it under the GPL 2 License.
 In no event shall Fernando Ike be liable to any party for direct,
 indirect, special, incidental, or consequential damages, including lost
 profits, arising out of the use of this software and its documentation, even
-if Dickson S. Guedes has been advised of the possibility of such damage.
+if Fernando Ike has been advised of the possibility of such damage.
 
 Fernando Ike specifically disclaims any warranties, including, but not
 limited to, the implied warranties of merchantability and fitness for a
