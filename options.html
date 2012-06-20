@@ -8,9 +8,15 @@ function sPragma(){
     var msgbox = 'Pragmas added:\n\n';
     for(var i=0;i<pragmafields.length;i++){
         field = pragmafields[i];
-        num = i+1;
-        localStorage.setItem('dataPragma'+num, field.value);
-        msgbox += ' '+field.value+'\n';
+		num = i+1;
+		if (!field.value){
+		
+		}
+		else
+		{	
+        	localStorage.setItem('dataPragma'+num, field.value);
+			msgbox += ' '+field.value+'\n';
+		}
     }
 
     if (!localStorage.getItem('dataPragma1')){
@@ -23,10 +29,6 @@ function sPragma(){
 
 
 function cPragma(){
-/*	for(var i in pragmafields.length){
-		localStorage.removeItem("dataPragma"+(i+1));
-}
- */
 	for(var i=0;i<pragmafields.length;i++){
 		num = i+1;
 		localStorage.removeItem('dataPragma'+num);
