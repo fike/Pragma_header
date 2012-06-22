@@ -10,22 +10,17 @@ var num
 for(var i=0;i<11; i++){
 	num = i+1;
 	Pragma = localStorage['dataPragma'+num];
-	if (!Pragma){
-	
-	}
-	else
-	{
+	if (Pragma){
 		All_Pragmas = All_Pragmas + " " + Pragma;
 	}		
 }
 
 
-/* That is workaround, without it the extension is crash.*/
-if(All_Pragmas.length == 0){
-	var All_Pragmas = "a"
+if(!All_Pragmas){
+
 }
-
-
+else
+{
 	chrome.webRequest.onBeforeSendHeaders.addListener(   
 	function(info) { newheader = [{name:'Pragma', value: All_Pragmas}]; 		console.log("URL: " + info.url);    
 		info.requestHeaders.push.apply(info.requestHeaders,newheader);    
@@ -37,6 +32,7 @@ if(All_Pragmas.length == 0){
 	},   
 	{urls: ["<all_urls>"]},   
 	["blocking", "requestHeaders"]);
+}
 </script>
 </body>
 </html>

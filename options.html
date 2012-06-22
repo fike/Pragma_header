@@ -4,7 +4,8 @@
 <title>Add header pragma</title>
 <script type="text/javascript">
 function sPragma(){
-    var field, num;
+	var field, num;
+	var All_Pragmas=""
     var msgbox = 'Pragmas added:\n\n';
     for(var i=0;i<pragmafields.length;i++){
         field = pragmafields[i];
@@ -13,13 +14,14 @@ function sPragma(){
 		
 		}
 		else
-		{	
+		{ 
+			All_Pragmas = All_Pragmas + " " + field.value;
         	localStorage.setItem('dataPragma'+num, field.value);
 			msgbox += ' '+field.value+'\n';
 		}
     }
 
-    if (!localStorage.getItem('dataPragma1')){
+    if (!All_Pragmas){
         alert('Entry a value!');
     }else{
    	alert(msgbox);
