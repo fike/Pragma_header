@@ -3,6 +3,12 @@ Pragma Header - Chrome/Chromium extension
 
 Pragma Header is a simple extension to added pragma headers in HTTP requests.
 
+[![Preview][preview]][pragma]
+
+[preview]: https://github.com/fike/Pragma_header/raw/master/images/screenshot.png
+[pragma]: https://github.com/fike/Pragma_header
+
+
 Installation
 ------------
 
