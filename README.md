@@ -1,20 +1,20 @@
 Pragma Header - Chrome/Chromium extension
 =========================================
 
-Pragma Header is simple extension to added pragma headers in requests http.
+Pragma Header is a simple extension to added pragma headers in HTTP requests.
 
 Installation
 ------------
 
-To install, go to Chrome Stora or use extension developer mode Chrome/Chromium.
+To install, go to Chrome Store or use extension developer mode at Chrome/Chromium.
 
 TODO
 ----
 
-* Split javascript code of the htm code.
+* Unobtrusive Javascript.
 * Update header without restart chrome/chromium.
 * Fix bug when new header set zero.
-* Create a beatiful designer. My designer skill is terrible, so I accept voluntaree. :D
+* Create a beatiful interface. My designer skills is terrible, so I accept voluntaree. :D
 
 
 Copyright and License
