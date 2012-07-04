@@ -1,35 +1,56 @@
-function PragmaHeader() {
-	this.pragmas = [''];	
+function PragmaHeader() {	
+	var values = this.getStoredValues();
+
+	if ( values.length > 0 ) {
+		for ( var item in values ) {
+			this.addCommand(values[item]);
+		}		
+	} else {
+		this.addCommand("");
+	}	
 };
 
-PragmaHeader.prototype.addCommand = function() {	
+PragmaHeader.prototype.getStoredValues = function() {
+	var values = [];
+	for ( var key in localStorage ) {		
+  	if ( key.match(/^dataPragma\d+/) ) {
+  		values.push(localStorage.getItem(key));  		  		
+  	}
+	}
+
+	console.log("Stored pragma values: " + values);
+	
+	return values;	
+};
+
+PragmaHeader.prototype.addCommand = function(value) {	
+	var index = $(":text").length;
+
 	var fieldset = $('fieldset');
 	var controlGroup = $("<div>").addClass("control-group");
 	var label = $("<label>").addClass("control-label")
-													.attr("for", "pragma_" + this.pragmas.length)
+													.attr("for", "pragma_" + index)
 													.html("Value");
 
 	var controls = $("<div>").addClass("controls");
 	var input = $("<input>").addClass("text_field")
-													.attr("id", "pragma_" + this.pragmas.length)
-													.attr("name", "pragma_" + this.pragmas.length)
-													.attr("size", "30")
-													.attr("type", "text");
+													.attr("id", "pragma_" + index)
+													.attr("name", "pragma_" + index)
+													// .attr("size", "20")
+													.attr("type", "text")
+													.attr('value', value);
 
 	controlGroup.appendTo(fieldset);
 	label.appendTo(controlGroup);
 	controls.appendTo(controlGroup);
 	input.appendTo(controls);	
-
-	this.pragmas.push("");
 };
 
 PragmaHeader.prototype.saveCommand = function() {
 	var inputs = $(":text");
 	this.pragmas = [];
 	this.resetLocalStorage();
-
-	var msg = "Values saved! \n";
+	
 	for ( var i = 0, length = inputs.length; i < length; i++ ) {
 		var input = inputs[i];		
 
@@ -37,30 +58,38 @@ PragmaHeader.prototype.saveCommand = function() {
 		var value = $.trim(input.value); 		
 
 		if ( value !== "" ) {
-			localStorage.setItem("dataPragma"+i, value);	
-			msg = "\ndataPragma" + i + ": " + value;
+			localStorage.setItem("dataPragma"+i, value);				
+			console.log("Saved: " + value);
 		}
 
 		this.pragmas.push(value);
-	}
+	}	
+};
 
-	alert(msg);
+PragmaHeader.prototype.removeAllFields = function() {
+	var fieldset = $('fieldset .control-group');
+	fieldset.remove();
 };
 
 PragmaHeader.prototype.resetCommand = function() {	
-	var fieldset = $('fieldset .control-group');
-	fieldset.remove();
-
-	resetLocalStorage();
-
-	this.pragmas = [];
-	this.addCommand();
+	this.removeAllFields();
+	this.resetLocalStorage();
+	this.addCommand("");
 };
 
 PragmaHeader.prototype.resetLocalStorage = function() {
-	for ( var i = 0, length = this.pragmas.length; i < length; i++ ) {
-		localStorage.removeItem("dataPragma" + i);
+	var keys = [];
+	for ( var key in localStorage ) {		
+  	if ( key.match(/^dataPragma\d+/) ) {
+			keys.push(key);
+		}
 	}
+
+	for ( var item in keys ) {
+		localStorage.removeItem(keys[item]);		
+	}
+
+	console.log("Removed values: " + keys.length);
 };
 
 // Bindings
@@ -71,9 +100,8 @@ $(function() {
 		pragmaHeader.addCommand();
 	});
 
-	$('#save').click(function() {
+	$('form').submit(function() {
 		pragmaHeader.saveCommand();
-		return false;
 	});
 
 	$('#reset').click(function() {
