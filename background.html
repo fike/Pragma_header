@@ -1,38 +1,9 @@
 <html>
 <head>
+	<script src="js/libs/jquery-1.7.2.min.js" type="text/javascript"></script>
+  <script src="js/background.js" type="text/javascript"></script>
 </head>
 <body>
-<script type="text/javascript">
-	
-var All_Pragmas=""
-var Pragma
-var num
-for(var i=0;i<11; i++){
-	num = i+1;
-	Pragma = localStorage['dataPragma'+num];
-	if (Pragma){
-		All_Pragmas = All_Pragmas + " " + Pragma;
-	}		
-}
 
-
-if(!All_Pragmas){
-
-}
-else
-{
-	chrome.webRequest.onBeforeSendHeaders.addListener(   
-	function(info) { newheader = [{name:'Pragma', value: All_Pragmas}]; 		console.log("URL: " + info.url);    
-		info.requestHeaders.push.apply(info.requestHeaders,newheader);    
-		for(var i in info.requestHeaders) {         
-			for (var key in info.requestHeaders[i]){            
-				console.log("header "+i+" ["+key+"] "+info.requestHeaders[i][key]);         
-		}   }
-		return {requestHeaders: info.requestHeaders};   
-	},   
-	{urls: ["<all_urls>"]},   
-	["blocking", "requestHeaders"]);
-}
-</script>
 </body>
 </html>
