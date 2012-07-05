@@ -1,32 +1,31 @@
-$(function() {
-	var pragma_values = "";
-	
-	for (var key in localStorage) {
-  	if ( key.match(/^dataPragma\d+/) {
-  		pragma_values = pragma_values + " " + values;
+$(function() {	
+	var filter = { urls: ["<all_urls>"] };
+	var opt_extraInfoSpec = ["blocking", "requestHeaders"];
+
+	var values = "";	
+	for ( var key in localStorage ) {		
+  	if ( key.match(/^dataPragma\d+/) ) {
+  		values = values + localStorage.getItem(key);  		  		
   	}
 	}
 
-	pragma_values = $.trim(pragma_values);
+	values = $.trim(values);	
 
-	if ( pragma_values.length > 0 ) {
+	if ( values != "" ) {
 		chrome.webRequest.onBeforeSendHeaders.addListener(
-			function(info) {
-				newheader = [{name:'Pragma', value: pragma_values}]; 		
-				console.log("URL: " + info.url);    
-				info.requestHeaders.push.apply(info.requestHeaders,newheader); 
+			function(info) {								
+				var newHeader = [ {name:'Pragma', value: values} ]; 		
 
-				for(var i in info.requestHeaders) {         
-					for ( var key in info.requestHeaders[i] ) {            
-						console.log("header "+i+" ["+key+"] "+info.requestHeaders[i][key]);    
+				console.log("URL: " + info.url);    
+				info.requestHeaders.push.apply(info.requestHeaders, newHeader); 				
+
+				for( var header in info.requestHeaders ) {         
+					for ( var key in info.requestHeaders[header] ) {            
+						console.log("Header " + header + " [" + key + "] " + info.requestHeaders[header][key]);    
 					}   
 				}
 					
 				return {requestHeaders: info.requestHeaders};   
-			}
-			, 
-			{urls: ["<all_urls>"]},   
-			["blocking", "requestHeaders"]);
+			}, filter, opt_extraInfoSpec);
 	}
-
 });

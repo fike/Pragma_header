@@ -1,9 +1,10 @@
 {
   "name": "Pragma Header",
   "version": "0.2",
+  "manifest_version": 2,
   "description": "Pragma Header",
   "browser_action": {
-	  "popup": "popup.html",
+	  "default_popup": "popup.html",
 	  "default_icon": "ligth.png",
 	  "default_title": "Pragma Header"
   },
@@ -18,6 +19,8 @@
 	  "16": "ligth.png"
   },
   "options_page": "options.html",
-  "background_page": "background.html"
+  "background": {
+	  "page": "background.html"
+  }
 }
 

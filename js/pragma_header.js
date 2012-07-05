@@ -48,9 +48,10 @@ PragmaHeader.prototype.addCommand = function(value) {
 
 PragmaHeader.prototype.saveCommand = function() {
 	var inputs = $(":text");
-	this.pragmas = [];
+	var pragmas = [];
 	this.resetLocalStorage();
 	
+	var index = 0;
 	for ( var i = 0, length = inputs.length; i < length; i++ ) {
 		var input = inputs[i];		
 
@@ -58,12 +59,17 @@ PragmaHeader.prototype.saveCommand = function() {
 		var value = $.trim(input.value); 		
 
 		if ( value !== "" ) {
-			localStorage.setItem("dataPragma"+i, value);				
-			console.log("Saved: " + value);
-		}
+			var subvalues = value.split(" ");
+			for ( var item in subvalues ) {				
+				localStorage.setItem("dataPragma"+index, subvalues[item]);			
+				pragmas.push(subvalues[item]);
+				console.log("Saved: " + subvalues[item]);
+				index += 1;
+			}			
+		}	
+	}
 
-		this.pragmas.push(value);
-	}	
+	alert("Values saved: " + pragmas + "\n\nRestart your browser.");
 };
 
 PragmaHeader.prototype.removeAllFields = function() {
@@ -102,6 +108,7 @@ $(function() {
 
 	$('form').submit(function() {
 		pragmaHeader.saveCommand();
+		return false;
 	});
 
 	$('#reset').click(function() {
