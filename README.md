@@ -39,5 +39,5 @@ if Fernando Ike has been advised of the possibility of such damage.
 Fernando Ike specifically disclaims any warranties, including, but not
 limited to, the implied warranties of merchantability and fitness for a
 particular purpose. The software provided hereunder is on an "as is" basis,
-and Dickson S. Guedes has no obligations to provide maintenance, support,
+and Fernando Ike has no obligations to provide maintenance, support,
 updates, enhancements, or modifications.

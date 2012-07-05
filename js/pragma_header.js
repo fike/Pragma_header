@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2012 Fernando Ike
+ *
+ * This extension is free software; you can redistribute it and/or modify
+ * it under the GPL 2 License.
+ *
+ * In no event shall Fernando Ike be liable to any party for direct,
+ * indirect, special, incidental, or consequential damages, including lost
+ * profits, arising out of the use of this software and its documentation, even
+ * if Fernando Ike has been advised of the possibility of such damage.
+ * 
+ * Fernando Ike specifically disclaims any warranties, including, but not
+ * limited to, the implied warranties of merchantability and fitness for a
+ * particular purpose. The software provided hereunder is on an "as is" basis,
+ * and Fernando Ike has no obligations to provide maintenance, support,
+ * updates, enhancements, or modifications.
+ */
+
 function PragmaHeader() {	
 	var values = this.getStoredValues();
 

@@ -1,0 +1,118 @@
+fike <fike@midstorm.org>	2012-07-04
+
+    * fix screenshot.png
+
+fike <fike@midstorm.org>	2012-07-04
+
+    * new release to manifest.json
+    * fix name screenshot.jpg
+
+Merge: 265285f db29413
+Fernando ike <fike@midstorm.org>	2012-07-04
+
+    Merge pull request #4 from danielnegri/master
+    
+    fixed bug with background.html and fantastic new designer. Thanks!
+
+Daniel negri <danielgomesnegri@gmail.com>	2012-07-04
+
+    fix for background.html
+
+Merge: 946bab5 265285f
+Daniel negri <danielgomesnegri@gmail.com>	2012-07-04
+
+    fixed bug with background.html
+
+Daniel negri <danielgomesnegri@gmail.com>	2012-07-04
+
+    fixed background.html code
+    
+    Fixing code at background.html and restore previous values into the form
+
+fike <fike@midstorm.org>	2012-07-04
+
+    * Change manifest version to 2.
+
+fike <fike@midstorm.org>	2012-07-03
+
+    fix script tag.
+
+fike <fike@midstorm.org>	2012-07-03
+
+    split javascript of options.html. Create options.js.
+
+Daniel negri <danielgomesnegri@gmail.com>	2012-07-03
+
+    readme - added screenshot
+    
+    Added one screenshot to README.md
+
+Daniel negri <danielgomesnegri@gmail.com>	2012-07-03
+
+    added unobtrusive javascript and new layout
+    
+    Added a Unobtrusive Javascript code and implemented a new layout using
+    Twitter Bootstrap.
+
+fike <fike@midstorm.org>	2012-06-21
+
+    new version 0.2
+
+fike <fike@midstorm.org>	2012-06-21
+
+    * Fix workaround if the pragmas for null
+    * fix clean function
+
+fike <fike@midstorm.org>	2012-06-20
+
+    * Fix problem of undefined variable in
+    background.html
+    * Organize option.html to save only Pragma that for use.
+
+fike <fike@midstorm.org>	2012-06-16
+
+    * fix function cPragma;
+
+fike <fike@midstorm.org>	2012-06-16
+
+    Add new data to README.md
+
+Merge: b0dfa78 9c4a43e
+Fernando ike <fike@midstorm.org>	2012-06-13
+
+    Merge pull request #1 from rafaelsdm/master
+    
+    Dei uma melhorada no options.html
+
+Rafael Sierra <rafaeljsg14@gmail.com>	2012-06-12
+
+    Refactor of options.html
+
+Rafael Sierra <rafaeljsg14@gmail.com>	2012-06-12
+
+    Fixed 'if'
+
+Rafael Sierra <rafaeljsg14@gmail.com>	2012-06-12
+
+    Closed <html> tag
+
+fike <fike@midstorm.org>	2012-06-12
+
+    * Added popup.html.
+    * Fix a message broken to salve pragmas.
+
+fike <fike@midstorm.org>	2012-06-12
+
+    Added new fields.
+
+fike <fike@midstorm.org>	2012-06-09
+
+    * Fix load data.
+
+fike <fike@midstorm.org>	2012-06-09
+
+    Fix name of README.md
+
+fike <fike@midstorm.org>	2012-06-09
+
+    Initial commit
