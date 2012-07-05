@@ -5,7 +5,7 @@ $(function() {
 	var values = "";	
 	for ( var key in localStorage ) {		
   	if ( key.match(/^dataPragma\d+/) ) {
-  		values = values + localStorage.getItem(key);  		  		
+  		values = values + " " + localStorage.getItem(key);  		  		
   	}
 	}
 
