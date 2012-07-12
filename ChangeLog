@@ -1,3 +1,13 @@
+fike <fike@midstorm.org>	2012-07-05
+
+    New release 0.3
+    
+    * added changelog file
+    * added license header in the files
+    * remove pragma_header-spec.js 
+    * increase release in manifes.json   
+    * added text that explain to insert values in a field.
+
 fike <fike@midstorm.org>	2012-07-04
 
     * fix screenshot.png

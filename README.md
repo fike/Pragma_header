@@ -1,7 +1,11 @@
 Pragma Header - Chrome/Chromium extension
 =========================================
 
-Pragma Header is a simple extension to added pragma headers in HTTP requests.
+   This is simple extension to add pragma header in http request.  The pragma is used to send specifies commands to webservers or reverse proxies that answers conform the implementation.
+
+   Some CDNs also them pragma header to debug. The pragma is part of specification to [HTTP 1.1 - RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+
+   Pragma Header is a simple extension to added pragma headers in HTTP requests.
 
 [![Preview][preview]][pragma]
 
@@ -12,7 +16,7 @@ Pragma Header is a simple extension to added pragma headers in HTTP requests.
 Installation
 ------------
 
-To install, go to Chrome Store or use extension developer mode at Chrome/Chromium.
+   To install, go to Chrome Store or use extension developer mode at Chrome/Chromium.
 
 TODO
 ----
@@ -26,17 +30,17 @@ TODO
 Copyright and License
 ---------------------
 
-Copyright (c) 2012 Fernando Ike
+   Copyright (c) 2012 Fernando Ike
 
-This extension is free software; you can redistribute it and/or modify 
+   This extension is free software; you can redistribute it and/or modify 
 it under the GPL 2 License.
 
-In no event shall Fernando Ike be liable to any party for direct,
+   In no event shall Fernando Ike be liable to any party for direct,
 indirect, special, incidental, or consequential damages, including lost
 profits, arising out of the use of this software and its documentation, even
 if Fernando Ike has been advised of the possibility of such damage.
 
-Fernando Ike specifically disclaims any warranties, including, but not
+   Fernando Ike specifically disclaims any warranties, including, but not
 limited to, the implied warranties of merchantability and fitness for a
 particular purpose. The software provided hereunder is on an "as is" basis,
 and Fernando Ike has no obligations to provide maintenance, support,
