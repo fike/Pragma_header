@@ -5,7 +5,6 @@ Pragma Header - Chrome/Chromium extension
 
    Some CDNs also them pragma header to debug. The pragma is part of specification to [HTTP 1.1 - RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
 
-   Pragma Header is a simple extension to added pragma headers in HTTP requests.
 
 [![Preview][preview]][pragma]
 
